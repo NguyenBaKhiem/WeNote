@@ -1,0 +1,3 @@
+[submodule "WeNote"]
+	path = WeNote
+	url = https://github.com/NguyenBaKhiem/WeNote.git
