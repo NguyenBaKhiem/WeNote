@@ -7,7 +7,7 @@
 // }
 
 import Vue from 'vue';
-import Echo from 'laravel-echo'
+// import Echo from 'laravel-echo'
 import VueI18n from './VueI18n';
 import VueSession from 'vue-session';
 import messages from './messages';
@@ -64,15 +64,15 @@ window.isAuthenticated = AuthenticationUtils.isAuthenticated();
 Vue.use(VueI18n);
 Vue.use(VueSession, { persist: true });
 
-window.Echo = new Echo({
-  broadcaster: 'socket.io',
-  host: SOCKET_URL,
-  auth: {
-    headers: {
-      'Authorization': 'Bearer ' + AuthenticationUtils.getAccessToken(),
-    }
-  }
-});
+// window.Echo = new Echo({
+//   broadcaster: 'socket.io',
+//   host: SOCKET_URL,
+//   auth: {
+//     headers: {
+//       'Authorization': 'Bearer ' + AuthenticationUtils.getAccessToken(),
+//     }
+//   }
+// });
 
 const locale = document.documentElement.lang;
 const i18n = new VueI18n({

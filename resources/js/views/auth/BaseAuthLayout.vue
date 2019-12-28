@@ -1,10 +1,5 @@
 <template>
-  <section class="hero is-success is-fullheight bg-only-mobile" 
-    style="background-image: url('/images/MAT_2.JPG');
-            background-repeat: no-repeat;
-            background-position: initial;
-            background-size: contain;
-    ">
+  <section class="hero is-success is-fullheight bg-only-mobile">
     <b-navbar type="is-success" id="navbar">
       <template slot="brand">
         <b-navbar-item tag="router-link" to="/">

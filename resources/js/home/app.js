@@ -24,7 +24,6 @@ import AuthenticationUtils from 'common/AuthenticationUtils';
 import ClickOutside from 'vue-click-outside';
 import 'common/AddOn';
 
-import "common/registerServiceWorker";
 
 Vue.directive('click-outside', ClickOutside);
 
@@ -36,7 +35,7 @@ const i18n = window.i18n;
 
 Vue.use(VeeValidate);
 
-window.GlobalSocket = new GlobalSocket();
+// window.GlobalSocket = new GlobalSocket();
 
 // router config
 const router = new VueRouter(Routers);
@@ -70,7 +69,7 @@ router.afterEach((to, from) => {
 Vue.mixin({
   data () {
     return {
-      tabTitle: 'Gamelancer',
+      tabTitle: 'WeNote',
       isSubmitting: false,
     };
   },
