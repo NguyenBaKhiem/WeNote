@@ -1,0 +1,287 @@
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$color_grey_head: rgb(247, 247, 247);
+$color_grey_border: rgb(193,193,193);
+$silver: #c2c2c2;
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+$navy: #000080;
+$color_dark_gray: #a9a9a9;
+$color_black: #000000;
+$color_green_vogue: #043164;
+$color_caribbean_green: #05D184;
+$color_sea_green: #4EEE94;
+$color_medium_sea_green: #cb371;
+$color_mountain_meadow: #15E194;
+$color_slate_blue:  #6a5acd;
+$color-catskill-white: #eef1f6;
+$color-grey: #999999;
+$color-blue-white: #cce5ff;
+$stratos-2:#00012e;
+$color-blue-cerulean-light: #265ac3;
+$color-blue-cerulean-lighter: #043164;
+
+// Color message: success, error, warning, primary
+$background_color_primary_message: #d2e4f1;
+$background_color_success_message: #dff0d4;
+$background_color_warning_message: #fcf8e1;
+$background_color_error_message: #f2dedc;
+
+$color_primary_text_message: #0ab9f3;
+$color_warning_text_message: #ff9800;
+
+
+$border_thin: 1px solid $color_grey_border;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Color
+$color_blue_logo: rgb(0,144,235);
+$color_black_logo: rgb(45,45,45);
+
+$color_green_text: rgb(43,168,30);
+$color_red_text: rgb(238,74,74);
+
+$color_grey_text: rgb(51,51,51);
+$color_grey_body: rgb(248, 248, 248);
+$color_grey_head: rgb(247, 247, 247);
+$color_grey_border: rgb(193,193,193);
+$color_grey_border_light: rgba($color_grey_border, 0.5);
+$color_grey_button: rgb(230,230,230);
+$color_grey_icon: rgb(129,129,129);
+$color_grey_medal: rgb(119,123,140);
+$color_grey_icon_light: rgb(163, 163, 163);
+$color_grey_text_footer: rgb(180,180,180);
+$color_grey_select: rgb(229, 229, 229);
+$color_grey_table_row: rgba($color_grey_select , 0.3);
+$color_yellow_text : rgb(251,188,5);
+$color_black: rgb(46,46,46);
+$color_white: rgb(255,255,255);
+
+$color-grey-dark: #333333;
+$background-default: $color-white;
+$color-grey-dusty: #666666;
+$color-yellow-pale: #fcb419;
+$color-grey-sliver: #cccccc;
+$color-yellow-light:#faf3e6;
+$color-supernova:#ffc700;
+$color-gold_tips:#deb217;
+
+
+$color_mine_shaft: #333333;
+$color_river_bed: #404756;
+$color_bright_gray: #363C49;
+$color_grey: #999999;
+$color_dove_gray: #666666;
+$color_silver: #CCCCCC;
+$color_alto_gray: #D8D8D8;
+$color_alto: #CFCFCF;
+$color_catskill_white: #EEF1F6;
+$color_concrete: #F2F2F2;
+$color_champagne: #faf1cc;
+$color_alizarin_crimson: #E2221E;
+$color_corn: #E8AB00;
+$color_corn_pale: #E8BA00;
+$color_catalina_blue: #072691;
+$color_cerulean_blue: #265AC3;
+$color_blue_violet: #d8d8d81a;
+$alpha: 0.2;
+
+$color_green_text_alpha: rgba($color_green_text, $alpha);
+$color_red_text_alpha: rgba($color_red_text, $alpha);
+$color_blue_logo_alpha: rgba($color_blue_logo, $alpha);
+$color_black_logo_alpha: rgba($color_black_logo, $alpha);
+$color_blue_modal: #161839;
+
+$font_mini_mini: 10px;
+$font_mini: 11px;
+$font-smaller: 12px;
+$font-small: 13px;
+$font_root: 14px;
+$font_medium: 15px;
+$font_semi_big: 16px;
+$font_big_17: 17px;
+$font_big: 18px;
+$font_big_19: 19px;
+$font_big_20: 20px;
+$font_big_21: 21px;
+$font_title_size_small: 22px;
+$font_big_23: 23px;
+$font_big_24: 24px;
+$font_title_size_small_25: 25px;
+$font_title_size_medium_small: 30px;
+$font_title_size_medium: 35px;
+$font_title_size_big: 40px;
+$font_title_size_big_small: 50px;
+
+$font_family_root: 'Roboto', sans-serif;
+$font_family_default: "Barlow-Medium", sans-serif;
+
+
+$border_thin: 1px solid $color_grey_border;
+$border_thin_light: 1px solid rgba($color_grey_border,0.5);
+$border_green: #010927;
+$background_color_grey: $color_grey;
+$background_color_catskill_white: $color_catskill_white;
+$background_color_corn: $color_corn;
+$background_color_river_bed: $color_river_bed;
+$background_color_bright_gray: $color_bright_gray;
+$background_color_catalina_blue: $color_catalina_blue;
+$background_color_primary_message: #d2e4f1;
+$background_color_success_message: #dff0d4;
+$background_color_warning_message: #fcf8e1;
+$background_color_error_message: #f2dedc;
+
+$color_primary_text_message: #0ab9f3;
+$color_warning_text_message: #ff9800;
+
+$background_color_head_table: #c5d7e1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================can.pham@sotatek.com============================================================= */
+
+$color_international_orange: #FB5100;
+$color_ripe_lemon: #F8E71C;
+$color_bright_turquoise: #00FBB7;
+$color_white: #ffffff;
+$color_blue_haze: #CCCDE2;
+$color_santas_gray: #9a9aa9;
+$color_amethyst: #a66bd1;
+$color_lavender: #C26AD6;
+$color_havelock_blue: #4A90E2;
+$color_havelock_blue_opacity: #4a90e22b;
+$color_governor_bay: #442DB3;
+$color_lucky_point_gray: #1E2169;
+$color_lucky_point: #1E216A;
+$color_prussian_blue: #00254F;
+$color_navy_blue: #000562;
+$color_navy_blue_2: #010788;
+$color_stratos: #000243;
+$color_black_russian: #000227;
+$wild_blue_yonder: #8e90b8;
+$stratos: #00045a;
+$ripe_lemon: #f8e71d;
+$aquamarine: #44fbb7;
+$artinique: #343553;
+$deep_sapphire: #053064;
+$background_body: $color_stratos;
+$color_buddha_gold:#6f60605e;
+$color_san_juan:#2e4968;
+$color_blue_zodiac:#0e163b;
+$color_oslo_gray :#8B8E92;
+$color_rhino :#252B4B;
+$color_silver_sand :#C9CACA;
+$color_jacarta:#2c2f6d;
+$ebony_clay:#282947;
+$deep_cove:#07133e;
+$dusty_gray:#999999;
+$whisperapprox:#F2F3F8;
+$gallery:#eeeeee;
+$alto:#cecece;
+$cornflower_blue:#7272ea;
+
+// Font size
+$font_mini_mini: 10px;
+$font_mini: 11px;
+$font_smaller: 12px;
+$font_small: 13px;
+$font_root: 14px;
+$font_medium: 15px;
+$font_medium-bigger: 16px;
+$font_big_17: 17px;
+$font_big: 18px;
+$font_big_19: 19px;
+$font_big_20: 20px;
+$font_big_21: 21px;
+$font_title_size_small: 22px;
+$font_big_23: 23px;
+$font_big_24: 24px;
+$font_title_size_small_25: 25px;
+$font_title_size_medium_small: 30px;
+$font_big_32: 32px;
+$font_big_34: 34px;
+$font_title_size_medium: 35px;
+$font_title_size_big: 40px;
+$font_title_size_big_small: 50px;
+
+// Font family
+// $font-family-Arial: 'Arial', sans-serif;
+$font-family-OpenSans: 'OpenSans', sans-serif;
+$font-family-OpenSans-Bold: 'OpenSans-Bold', sans-serif;
+// $font-family-OpenSans-Italic: 'OpenSans-Italic', sans-serif;
+// $font-family-Montserrat: 'Montserrat-Regular', sans-serif;
+$font-family-Montserrat-Bold: 'Montserrat-Bold', sans-serif;
+$font-family-Montserrat-SemiBold: 'Montserrat-SemiBold', sans-serif;
+$font-family-Montserrat-Medium: 'Montserrat-Medium', sans-serif;
+
+
+// Define min-width, max-with
+$min-width-app: 1140px;
+$max-width-app: 1140px;
