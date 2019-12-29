@@ -56,7 +56,7 @@ class UserService
     public function getUserProfile($userId)
     {
         return User::where('id', $userId)
-                ->select('id', 'email','username', 'is_notified', 'full_name', 'avatar')
+                ->select('id', 'email','username', 'full_name', 'avatar')
                 ->first();
     }
 
