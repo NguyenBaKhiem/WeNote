@@ -15,18 +15,22 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
+
             $table->string('email')->unique();
-            $table->string('password');
             $table->string('email_verification_code')->nullable();
             $table->unsignedTinyInteger('email_verified')->default(0);
-            $table->unsignedTinyInteger('is_notified')->default(1)->comment('enable/disable notification');
             $table->string('username')->nullable();
-            $table->string('phone_no', 20)->nullable();
+            $table->string('password');
             $table->string('full_name')->nullable();
-            $table->date('dob')->nullable()->comment("date of birth");
-            $table->unsignedTinyInteger('gender')->comment('sex of user, 1:male, 0:female]');
-            $table->enum('status', ['active', 'inactive'])->default('active');
+
+            $table->string('phone_number', 20)->nullable();
             $table->text('avatar')->nullable();
+            $table->date('dob')->nullable();
+            $table->enum('sex', ['male', 'female'])->nullable();
+            $table->enum('role', ['normal_user', 'loyal_user', 'admin'])->default('normal_user');
+            $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->unsignedBigInteger('points')->default(0);
+
             $table->rememberToken();
             $table->timestamps();
         });
