@@ -12,7 +12,33 @@ export default {
         center: [105.7827015, 21.0382399],  // starting position [lon, lat]
         zoom: 16 // starting zoom
     });
-
+    var popup = new mapboxgl.Popup({ closeOnClick: false })
+.setLngLat([105.7827015, 21.0382399])
+.setHTML(`<p class='title is-5 tool-tip-title'>dd</p>
+                <br/>
+                  231312332, 12323, 12323
+                <br/>
+                21323 - 213123
+                <img class="note-img" src="https://cdn.24h.com.vn/upload/3-2018/images/2018-09-20/1537376428-892-nu-than-phim-18--khien-trieu-fan-soc-khi-co-y-dinh-nghi-huu-kirara-asuka-1537371671-width660height880.jpg">
+                <p class='title is-6' style='margin-bottom: -10px;margin-top:0px;'>Title</p>
+                <p>HIHI dm cac ban - <a>Yuki Khiem Nguyen</a></p>
+                <div class='tool-bar' >
+                  <button type='button' class='button is-success'>
+                  <span class='icon is-large'><i class='fa fa-thumbs-up'></i></span>
+                   200
+                  </button>
+                  <button type='button' class='button is-danger'>
+                  <span class='icon is-large'><i class='fa fa-thumbs-down'></i></span>
+                   200
+                  </button>
+                  <button type='button' class='button is-info'>
+                  <span class='icon is-large'><i class='fa fa-comment'></i></span>
+                   200
+                  </button>
+                </div>
+                <button class='button is-primary is-outlined add-btn'>Show 4 more ...</button>
+                <button class='button is-primary add-btn'>Add note</button>`)
+.addTo(map);
     map.addControl(
         new MapboxDirections({
             accessToken: 'ZpIVSmYKNucNvxlHgRFRVBuj',
