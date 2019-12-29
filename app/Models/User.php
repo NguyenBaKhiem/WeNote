@@ -18,7 +18,9 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'email_verification_code', 'email_verified', 'username', 'full_name',
+        'phone_number', 'avatar', 'dob', 'sex',
+        'points', 'level', 'role', 'status'
     ];
 
     /**
@@ -36,7 +38,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+//        'email_verified_at' => 'datetime',
     ];
 
     public function findForPassport($username)

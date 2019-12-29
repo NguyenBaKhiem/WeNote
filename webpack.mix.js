@@ -11,8 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-//.copy('resources/js/lib/socket.io.js', 'public/js')
-   mix.js('resources/js/home/app.js', 'public/js')
+mix.copy('resources/js/lib/socket.io.js', 'public/js')
+   .js('resources/js/home/app.js', 'public/js')
    .sass('resources/sass/app.scss', 'public/css')
    .version();
 
