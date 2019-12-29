@@ -29,13 +29,17 @@
                 // Listen for the `directions.route` event that is triggered when a user
                 // makes a selection and add a symbol that matches the result.
                 directions.on('route', function (ev) {
+                    [...document.getElementsByClassName('mapboxgl-popup-close-button')].forEach(i=> i.click())
                     axios.post('/api/get-notes-from-path', {routes: ev.route[0].legs[0].steps.map(step => step.name)}).then(res => {
                         res.data.data.forEach(item => {
                             let hihi = new mapboxgl.Popup({closeOnClick: false})
                                 .setLngLat([item.longitude, item.latitude])
                                 .setHTML(`
-            <h5 class='title is-5 tool-tip-title'>${item.name}</h5>
-            <br/>${item.street}, ${item.district}, ${item.city}, ${item.country}
+            <h5 class='title is-5 tool-tip-title' style='margin-bottom: 0.5rem !important;'>
+                ${generateStyle(item.style)}
+                ${item.name}
+            </h5>
+            ${item.street || '?'}, ${item.district || '?'}, ${item.city || '?'}, ${item.country || '?'}
 
             <div class='card' style='margin-top: 0.5rem; margin-bottom: 0.5rem'>
                 <div class='card-image'>
@@ -53,7 +57,7 @@
                     <div class='content' style='margin-bottom: 0.5rem'>
                         ${item.description}
                         <hr/>
-                        Bởi <a href='#'>${item.full_name}</a> (${item.points} points)
+                        Bởi <a href='#'>${item.full_name}</a> (${item.points} <i class='fa fa-star-o'></i>)
                         <br/><time datetime='2016-1-1'>${item.created_at || ''}</time>
                     </div>
                     <div class='tool-bar'>
@@ -72,16 +76,10 @@
                 </div>
             </div>
 
-            <button class='button is-primary is-outlined add-btn'>Hiện 4 ghi chú khác...</button>
             <button class='button is-primary add-btn'>Thêm ghi chú</button>
                             `).addTo(map)
                         })
                     })
-                    var styleSpec = ev.route;
-                    var styleSpecBox = document.getElementById('json-response');
-                    var styleSpecText = JSON.stringify(styleSpec, null, 2);
-                    var syntaxStyleSpecText = syntaxHighlight(styleSpecText);
-                    styleSpecBox.innerHTML = syntaxStyleSpecText;
                 })
             });
 
@@ -102,6 +100,26 @@
                     }
                     return '<span class="' + cls + '">' + match + '</span>';
                 });
+            }
+
+            function generateStyle(style) {
+                var icon;
+                switch (style) {
+                    case 'success':
+                        icon = 'fa fa-map-marker';
+                        break;
+                    case 'warning':
+                        icon = 'fa fa-map-marker';
+                        break;
+                    case 'danger':
+                        icon = 'fa fa-map-marker';
+                        break;
+                    default:
+                        icon = 'fa fa-map-marker';
+                        break;
+                }
+
+                return `<span class='icon has-text-${style}'><i class='${icon}'></i></span>`;
             }
 
             function countVoteUp(comments) {
@@ -143,16 +161,11 @@
 
     .action-btn {
         padding: 0 !important;
-        margin-left: 2px;
+        margin-left: 0.1rem;
     }
 
     .add-btn {
         width: 100%;
-        margin-bottom: 6px;
-    }
-
-    .tool-tip-title {
-        margin-bottom: 0px !important;
     }
 
     .tool-bar {
@@ -161,9 +174,7 @@
         margin: 0px auto;
 
         .button {
-            //width: 32%;
             margin-bottom: 5px;
-            //border-radius: 41px !important;
             i {
                 margin-right: 10px;
             }

@@ -17,12 +17,12 @@
             <span class="icon is-small is-left">
               <b-icon icon="search" size="is-small" class="search_icon"></b-icon>
             </span>
-          </p>       
+          </p>
           <label class="focus_input_search">
             <b-icon size="is-small"
                     :icon="isSearchActive ? 'times': 'search'"
                     :class="isSearchActive ? 'times': 'search'"
-                    @click.native="isSearchActive = !isSearchActive" 
+                    @click.native="isSearchActive = !isSearchActive"
                     @click="isSearchActive = false">
             </b-icon>
           </label>
@@ -37,16 +37,12 @@
 
       <template slot="end">
         <template v-if="isAuthenticated">
-          <b-dropdown                    
+          <b-dropdown
               v-model="navigation"
               position="is-bottom-left"
               aria-role="menu"
               class="is-hidden-touch"
               id="messenger_dropdown">
-            <b-navbar-item class="nav-icon"
-                slot="trigger">
-              <b-icon icon="comments"></b-icon>
-            </b-navbar-item>
             <template v-for="(item, index) in items">
               <b-dropdown-item :value="`chennal{$index}`">
                 <b-icon icon="cog"></b-icon>
@@ -55,14 +51,14 @@
               <hr class="dropdown-divider" aria-role="menuitem" v-show="index < items.length - 1">
             </template>
           </b-dropdown>
-          <b-dropdown                    
+          <b-dropdown
               v-model="navigation"
               position="is-bottom-left"
               aria-role="menu">
             <b-navbar-item class="nav_item_edit"
                 slot="trigger"
                 role="button">
-              <span class="has-text-success">{{ user.full_name }}</span>
+              <span class="has-text-primary">{{ user.full_name }}</span>
             </b-navbar-item>
             <b-dropdown-item has-link value="comments" aria-role="menuitem">
               <router-link :to="{ name: 'Note' }" exact>
@@ -183,7 +179,7 @@
   import AuthenticationUtils from 'common/AuthenticationUtils';
 
   import Const from 'common/Const';
-  
+
   export default {
     data() {
       return {
@@ -208,7 +204,7 @@
       $route (to, from) {
         this.show = false;
       }
-    } 
+    }
   }
 </script>
 <style lang="scss" scoped>
@@ -349,7 +345,7 @@
               top: 12px;
               right: 15px;
               padding: 10px;
-              
+
             }
             span.search {
               top: 11px;
