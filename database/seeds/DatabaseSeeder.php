@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NotesTableSeeder::class);
         $this->call(NoteFlagsTableSeeder::class);
         $this->call(ReportFlagsTableSeeder::class);
+        $this->call(CommentsTableSeeder::class);
     }
 }
