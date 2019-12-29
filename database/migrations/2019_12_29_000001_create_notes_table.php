@@ -34,8 +34,8 @@ class CreateNotesTable extends Migration
             $table->string('street')->nullable();
             $table->string('house_number')->nullable();
 
-            $table->boolean('is_public')->comment('1:Public/0:Private');
-            $table->boolean('is_active')->comment('1:Active/0:Inactive');
+            $table->boolean('is_public')->default(true)->comment('1:Public/0:Private');
+            $table->boolean('is_active')->default(true)->comment('1:Active/0:Inactive');
 
             $table->unsignedBigInteger('created_by');
             $table->timestamps();
