@@ -17,4 +17,9 @@ class Note extends Model
         'post_code', 'country', 'city', 'district', 'street', 'house_number',
         'is_public', 'is_active', 'created_by'
     ];
+
+        public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
 }

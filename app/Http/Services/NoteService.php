@@ -14,10 +14,11 @@ class NoteService
 {
 	public function getNotes($input)
 	{
-		return Note::join('note_flags', 'note_flags.id', 'note_flag_id')
+		return Note::with('comments')
+		->join('note_flags', 'note_flags.id', 'note_flag_id')
 				->whereIn('street', $input['routes'])
 				->join('users', 'users.id', 'created_by')
-				->get(['note_flags.id', 'note_flags.name', 'note_flags.style', 'notes.title', 'notes.description', 'notes.longitude', 'latitude', 'osm_id', 'osm_type', 'osm_key', 'osm_value', 'post_code', 'country', 'city', 'district', 'street', 'house_number', 'created_by', 'notes.created_at']);
+				->get(['note_flags.id', 'note_flags.name', 'note_flags.style', 'notes.title', 'notes.description', 'notes.longitude', 'latitude', 'osm_id', 'osm_type', 'osm_key', 'osm_value', 'post_code', 'country', 'city', 'district', 'street', 'house_number', 'users.full_name', 'notes.created_at', 'users.points']);
 	}
 
 	public function addNote($input)
