@@ -1,6 +1,7 @@
 <?php
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
+
 use App\Consts;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -18,20 +19,27 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
-	$gender        = $faker->randomElements(['male', 'female'])[0];
-    $genderInt     = $gender == 'male' ? 1 : 0;
-    $firstName     = $faker->firstName($gender);
-    $lastName      = $faker->lastName($gender);
-    $fullName      = $firstName.' '.$lastName;
+    $email = $faker->unique()->safeEmail;
+    $sex = $faker->randomElements(['male', 'female'])[0];
+
     return [
-    	'username'		 => Str::random(6),
-        'full_name'      => $fullName,
-        'email'          => $faker->unique()->safeEmail,
+        'email' => $email,
+        'email_verification_code' => Str::random(6),
         'email_verified' => Consts::TRUE,
-        'gender'         => $genderInt,
-        'status'         => Consts::USER_ACTIVE,
-        'avatar'         => '/images/avatars/avatar-'.$gender.'-default.svg',
-        'password'       => bcrypt('123123'), // password
+        'username' => explode('@', $email)[0],
+        'password' => bcrypt('123456'),
+        'full_name' => $faker->firstName($sex) . ' ' . $faker->lastName($sex),
+
+        'phone_number' => $faker->e164PhoneNumber,
+        'avatar' => '/images/avatars/avatar-' . $sex . '-default.svg',
+        'dob' => $faker->dateTimeBetween($startDate = '-30 years', $endDate = '-20 years'),
+        'sex' => $sex,
+
+        'points' => mt_rand(0, 99999),
+        'level' => mt_rand(0, 5),
+        'role' => 'user',
+        'status' => $faker->randomElements([Consts::USER_ACTIVE, Consts::USER_INACTIVE])[0],
+
         'remember_token' => Str::random(32)
     ];
 });

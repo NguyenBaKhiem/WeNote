@@ -27,9 +27,11 @@ class CreateUsersTable extends Migration
             $table->text('avatar')->nullable();
             $table->date('dob')->nullable();
             $table->enum('sex', ['male', 'female'])->nullable();
-            $table->enum('role', ['normal_user', 'loyal_user', 'admin'])->default('normal_user');
-            $table->enum('status', ['active', 'inactive'])->default('active');
+
             $table->unsignedBigInteger('points')->default(0);
+            $table->unsignedTinyInteger('level')->default(0);
+            $table->enum('role', ['user', 'admin'])->default('user');
+            $table->enum('status', ['active', 'inactive'])->default('active');
 
             $table->rememberToken();
             $table->timestamps();
