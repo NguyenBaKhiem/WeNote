@@ -33,9 +33,6 @@
         <b-navbar-item tag="router-link" to="/">
           Home
         </b-navbar-item>
-        <b-navbar-item tag="router-link" to="/documents">
-          Documentation
-        </b-navbar-item>
       </template>
 
       <template slot="end">
@@ -67,11 +64,11 @@
                 role="button">
               <span class="has-text-success">{{ user.full_name }}</span>
             </b-navbar-item>
-            <b-dropdown-item has-link aria-role="menuitem">
-              <a href="https://google.com" target="_blank">
-                <b-icon icon="link"></b-icon>
-                  Google (link)
-              </a>
+            <b-dropdown-item has-link value="comments" aria-role="menuitem">
+              <router-link :to="{ name: 'Note' }" exact>
+                <b-icon icon="comments"></b-icon>
+                Note
+              </router-link>
             </b-dropdown-item>
             <b-dropdown-item has-link value="comments" aria-role="menuitem">
               <router-link :to="{ name: 'Messenger' }" exact>
