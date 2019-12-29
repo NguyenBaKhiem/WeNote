@@ -6232,7 +6232,7 @@
           if (request.status >= 200 && request.status < 400) {
             var data = JSON.parse(request.responseText);
             console.log(data);
-            axios.post('/api/get-notes-from-path', data.routes[0].legs[0].steps.map(step => step.name)).then(res => {
+            axios.post('/api/get-notes-from-path', {routes : data.routes[0].legs[0].steps.map(step => step.name)}).then(res => {
               console.log(res);
             })
             if (data.error) {

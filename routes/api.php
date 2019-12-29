@@ -17,7 +17,8 @@ Route::post('/oauth/token', [
     'uses' => 'API\Auth\LoginAPIController@issueToken',
     'middleware' => 'throttle:6000|6000,1',
 ]);
-Route::get('/get-notes', 'API\NoteController@getNotes');
+// Route::get('/get-notes', 'API\NoteController@getNotes');
+Route::post('get-notes-from-path', 'API\NoteController@getNotes');
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
