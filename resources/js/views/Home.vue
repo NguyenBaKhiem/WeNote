@@ -7,7 +7,18 @@ export default {
     var api = `https://apis.wemap.asia/raster-tiles/styles/osm-bright/{z}/{x}/{y}@2x.png?key=${process.env.MIX_MAP_API_KEY}`
     //starting position [lat, lon] , zoom int
     var map = L.map('mapid').setView([21.0382399, 105.7827015], 16)
-
+    var parkIcon = L.icon({
+      iconUrl: '/icon/park.svg',
+      iconSize:     [30, 30],
+    });
+    // axios.get('/api/get-notes').then(res => {
+    //
+    //   let notes = res.data.data;
+    //   notes.forEach(note => {
+    //           L.marker([note.latitude, note.longitude], { icon: parkIcon }).addTo(map);
+    //   })
+    //
+    // })
     L.tileLayer(api, {
         attribution: 'Map data &copy; <a href="https://wemap.asia/">WeMap</a>',
         maxZoom: 20,
@@ -41,6 +52,9 @@ export default {
             dataType: 'json',
         }).done(function (ketqua) {
             console.log(ketqua)
+            axios.get('/api/get-notes', {params: {long: popLocation.lng, lat: popLocation.lat}}).then(res => {
+              console.log(res);
+            });
             var popup = L.popup()
                 .setLatLng(popLocation)
                 .setContent(`<p class='title is-5 tool-tip-title'>${ketqua['features'][0]['properties']['name']}</p>
@@ -68,6 +82,8 @@ export default {
                                 <button class='button is-primary is-outlined add-btn'>Show 4 more ...</button>
                                 <button class='button is-primary add-btn'>Add note</button>`)
                 .openOn(map);
+
+
             $(this).addClass("done");
         });
 
