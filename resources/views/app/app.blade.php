@@ -13,6 +13,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Styles -->
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 </head>
@@ -23,15 +25,7 @@
     <script src="{{ mix('js/socket.io.js') }}"></script>
     <script>
         var APP_NAME = "{{ env('APP_NAME') }}";
-        // var APP_SHORT_NAME = "{{ env('APP_SHORT_NAME') }}";
-        var SOCKET_URL = "{{ env('SOCKET_URL', 'http://' . Request::getHost() . ':6001') }}";
-        {{-- var API_URL = "{{ env('API_URL', 'http://' . Request::getHost()) }}"; --}}
     </script>
-
-    {{-- Stripe payment --}}
-    {{-- <script src="https://js.stripe.com/v3/"></script> --}}
-
-    {{-- Gamelancer app --}}
     <script src="{{ mix('js/app.js') }}"></script>
 </body>
 </html>
