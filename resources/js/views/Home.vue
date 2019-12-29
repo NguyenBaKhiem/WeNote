@@ -43,9 +43,30 @@ export default {
             console.log(ketqua)
             var popup = L.popup()
                 .setLatLng(popLocation)
-                .setContent(`<p>${ketqua['features'][0]['properties']['name']}<br />
-                                ${popLocation.lat.toFixed(3)}, ${popLocation.lng.toFixed(3)}
-                                <button class='button is-primary is-outlined'>Add note</button>`)
+                .setContent(`<p class='title is-5 tool-tip-title'>${ketqua['features'][0]['properties']['name']}</p>
+                                <br/>
+                                  ${ketqua['features'][0]['properties']['street']}, ${ketqua['features'][0]['properties']['district']}, ${ketqua['features'][0]['properties']['city']}
+                                <br/>
+                                ${popLocation.lng.toFixed(10)} - ${popLocation.lat.toFixed(10)}
+                                <img class="note-img" src="https://cdn.24h.com.vn/upload/3-2018/images/2018-09-20/1537376428-892-nu-than-phim-18--khien-trieu-fan-soc-khi-co-y-dinh-nghi-huu-kirara-asuka-1537371671-width660height880.jpg">
+                                <p class='title is-6' style='margin-bottom: -10px;margin-top:0px;'>Title</p>
+                                <p>HIHI dm cac ban - <a>Yuki Khiem Nguyen</a></p>
+                                <div class='tool-bar' >
+                                  <button type='button' class='button is-success'>
+                                  <span class='icon is-large'><i class='fa fa-thumbs-up'></i></span>
+                                   200
+                                  </button>
+                                  <button type='button' class='button is-danger'>
+                                  <span class='icon is-large'><i class='fa fa-thumbs-down'></i></span>
+                                   200
+                                  </button>
+                                  <button type='button' class='button is-info'>
+                                  <span class='icon is-large'><i class='fa fa-comment'></i></span>
+                                   200
+                                  </button>
+                                </div>
+                                <button class='button is-primary is-outlined add-btn'>Show 4 more ...</button>
+                                <button class='button is-primary add-btn'>Add note</button>`)
                 .openOn(map);
             $(this).addClass("done");
         });
@@ -54,7 +75,7 @@ export default {
   }
 }
 </script>
-<style>
+<style lang="scss">
     * {
         margin: 0;
         padding: 0;
@@ -63,5 +84,32 @@ export default {
     #mapid {
         width: 100vw;
         height: 100vh;
+    }
+    .leaflet-popup-content-wrapper {
+      width: 16rem;
+    }
+    .add-btn {
+      width: 100%;
+      margin-bottom: 6px;
+    }
+    .note-img {
+      width: 100%;
+      height: 200px;
+    }
+    .tool-tip-title {
+      margin-bottom: 0px !important;
+    }
+    .tool-bar {
+      margin-bottom: 5px;
+      width: 100%;
+      margin: 0px auto;
+      .button {
+        width: 32%;
+        margin-bottom: 5px;
+          //border-radius: 41px !important;
+          i {
+            margin-right: 10px;
+          }
+      }
     }
 </style>
